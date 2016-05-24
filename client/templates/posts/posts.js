@@ -1,5 +1,5 @@
-template.posts.helpers({
+Template.posts.helpers({
   posts: function(){
-    Posts.find({}, {sort:{createdAt: -1}});
+    return Posts.find({}, {sort:{createdAt: -1}});
   }
 });

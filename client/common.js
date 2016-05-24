@@ -6,5 +6,11 @@ Meteor.startup(function() {
     });
     Accounts.ui.config({
         passwordSignupFields: 'USERNAME_AND_EMAIL'
-    })
+    });
+});
+
+Template.registerHelper("getProfileImg", function(userId){
+  var imgUrl = UserImages.findOne({userId: userId}).image;
+  console.log(imgUrl);
+  return imgUrl;
 });
